@@ -1,5 +1,6 @@
 #!/bin/bash
 
+podman login docker.io
 CURDIR=$PWD
 cd Containerfile.d
 
