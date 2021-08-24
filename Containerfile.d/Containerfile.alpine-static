@@ -1,4 +1,4 @@
-# Containerfile for tnk4on/yt-dlp:latest
+# Containerfile for tnk4on/yt-dlp:alpine-static
 
 # Preparation Build
 FROM alpine:latest as prep

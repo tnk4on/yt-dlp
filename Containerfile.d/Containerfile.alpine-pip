@@ -1,4 +1,4 @@
-# Containerfile for tnk4on/yt-dlp:pip
+# Containerfile for tnk4on/yt-dlp:alpine-pip
 FROM python:alpine
 LABEL maintainer="Shion Tanaka / Twitter(@tnk4on)"
 RUN apk add --update --no-cache --virtual .build-deps gcc musl-dev \

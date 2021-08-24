@@ -1,9 +1,9 @@
 # YT-DLP: Container Image
 
-<!--[English](README.md) / [Japanese](README_ja.md)-->
+<!-- [English](README.md) / [Japanese](README_ja.md) -->
 
 - This repository is inspired by [kijart/docker-youtube-dl](https://github.com/kijart/docker-youtube-dl).
-- This description assumes the use of [Podman](https://github.com/containers/podman) and [Buildah](https://github.com/containers/buildah). If you are using Docker, please read as appropriate.
+- This repository assumes the use of [Podman](https://github.com/containers/podman) and [Buildah](https://github.com/containers/buildah). If you are using Docker, please read as appropriate.
 
 ## Description
 
@@ -13,14 +13,14 @@
 ## About container images
 
 There are three types of container images depending on how they are built
-- `tnk4on/yt-dlp:latest` -> static binaries are used for yt-dlp and FFmpeg
-- `tnk4on/yt-dlp:pip` -> install yt-dlp and FFmpeg from package management tool (pip/apk)
-- `tnk4on/yt-dlp:pip` -> install yt-dlp and FFmpeg from package management tool (pip/dnf)
+- `tnk4on/yt-dlp:latest,alpine-static` -> static binaries are used for yt-dlp and FFmpeg
+- `tnk4on/yt-dlp:alpine-pip` -> install yt-dlp and FFmpeg from package management tool (pip/apk)
+- `tnk4on/yt-dlp:ubi8-minimal` -> install yt-dlp and FFmpeg from package management tool (pip/dnf)
 
 ### Features
 
 - Base Image: 
-    - python:alpine: `tnk4on/yt-dlp:latest,pip,static`
+    - python:alpine: `tnk4on/yt-dlp:latest,alpine-static,alpine-pip`
     - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi8-minimal`
 - FFmpeg already installed
 - Run as a non-root user. User: `yt-dlp` Created.
@@ -114,19 +114,26 @@ $ yt-dlp-mp4.sh 137 140 <url>
 
 ## How to build the container image
 
-### Build a container image with package management tool (pip/apk)
+###  Build a container image for static binaries
 
 ```
-$ git clone https://github.com/tnk4on/yt-dlp
+$ git clone https://github.com/tnk4on/yt-dlp.git
 $ cd yt-dlp/Containerfile.d
 $ buildah bud -t tnk4on/yt-dlp .
 ```
 
-###  Build a container image for static binaries
+### Build a container image with package management tool (pip/apk)
 
 ```
-$ git clone https://github.com/tnk4on/yt-dlp
+$ git clone https://github.com/tnk4on/yt-dlp.git
 $ cd yt-dlp/Containerfile.d
-$ buildah bud -t tnk4on/yt-dlp:static -f Containerfile.static
+$ buildah bud -t tnk4on/yt-dlp:pip -f Containerfile.pip
 ```
--->
+
+### Build a container image with package management tool (pip/dnf)
+
+```
+$ git clone https://github.com/tnk4on/yt-dlp.git
+$ cd yt-dlp/Containerfile.d
+$ buildah bud -t tnk4on/yt-dlp:ubi8-minimal -f Containerfile.ubi8-minimal
+```-->

@@ -13,14 +13,14 @@
 ## コンテナイメージについて
 
 コンテナイメージのビルド方式により下記の3種類があります
-- `tnk4on/yt-dlp:latest` -> yt-dlpとFFmpegは静的バイナリを使用
-- `tnk4on/yt-dlp:pip` -> パッケージ管理ツール(pip/apk)からyt-dlpとFFmpegを導入
+- `tnk4on/yt-dlp:latest,alpine-static` -> yt-dlpとFFmpegは静的バイナリを使用
+- `tnk4on/yt-dlp:alpine-pip` -> パッケージ管理ツール(pip/apk)からyt-dlpとFFmpegを導入
 - `tnk4on/yt-dlp:ubi8-minimal` -> パッケージ管理ツール(pip/dnf)からyt-dlpとFFmpegを導入
 
 ### 機能の特徴
 
 - ベースイメージ:
-    - python:alpine: `tnk4on/yt-dlp:latest,pip,static`
+    - python:alpine: `tnk4on/yt-dlp:latest,alpine-static,alpine-pip`
     - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi8-minimal`
 - FFmpegインストール済み
 - 非rootユーザーで実行。ユーザー: `yt-dlp` 作成済み。
