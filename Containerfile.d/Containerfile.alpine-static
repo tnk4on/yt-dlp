@@ -5,11 +5,11 @@ FROM alpine:latest as prep
 LABEL maintainer="Shion Tanaka / Twitter(@tnk4on)"
 
 # yt-dlp source (https://github.com/yt-dlp/yt-dlp)
-ENV BUILD_VERSION=2021.09.02
+ENV BUILD_VERSION=2021.09.25
 RUN wget https://github.com/yt-dlp/yt-dlp/releases/download/${BUILD_VERSION}/SHA2-256SUMS \
-&& SHA256_SUM=`grep yt-dlp: SHA2-256SUMS | sed -e "s/yt-dlp://"` \
+&& SHA256_SUM=`grep 'yt-dlp$' SHA2-256SUMS` \
 && wget https://github.com/yt-dlp/yt-dlp/releases/download/${BUILD_VERSION}/yt-dlp \
-&& echo "${SHA256_SUM}  yt-dlp" | sha256sum -c
+&& echo "${SHA256_SUM}" | sha256sum -c
 
 # ffmpeg static source (https://johnvansickle.com/ffmpeg/)
 RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
