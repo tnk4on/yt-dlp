@@ -1,11 +1,16 @@
 #!/bin/bash
 
-echo "login to docker.io"
+# Repository Login
+echo "### login to docker.io ###"
 podman login docker.io
+
+echo "### login to quay.io ###"
+podman login quay.io
+
+# Building Image
 CURDIR=$PWD
 cd Containerfile.d
 
-# Building Image
 for f in Containerfile*
 do
     echo -e "\n### Build ${f/Containerfile./} ###"
