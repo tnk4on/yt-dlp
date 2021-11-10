@@ -4,6 +4,8 @@ Dowonload ---> [[Quay.io](https://quay.io/repository/tnk4on/yt-dlp): [![tnk4on/y
 
 [English](README.md) / [Japanese](README_ja.md)
 
+## Curent Version: **2021.11.10.1**
+
 - This repository is inspired by [kijart/docker-youtube-dl](https://github.com/kijart/docker-youtube-dl).
 - This repository assumes the use of [Podman](https://github.com/containers/podman) and [Buildah](https://github.com/containers/buildah). If you are using Docker, please read as appropriate.
 
@@ -76,7 +78,7 @@ Sample 1 (Check the version of FFmepg)
 
 ```
 $ podman run --rm \--entrypoint "" tnk4on/yt-dlp ffmpeg -version |head -n1
-ffmpeg version 4.4-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2021 the FFmpeg developers
+ffmpeg version 4.4.1-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2021 the FFmpeg developers
 ```
 
 Sample 2 (launch a shell)
