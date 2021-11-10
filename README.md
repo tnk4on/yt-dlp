@@ -26,7 +26,8 @@ There are three types of container images depending on how they are built
 - Base Image: 
     - python:alpine: `tnk4on/yt-dlp:latest,alpine-static,alpine-pip`
     - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi8-minimal`
-- FFmpeg already installed
+- [FFmpeg](https://johnvansickle.com/ffmpeg/) already installed
+    - FFmpeg Static Builds: `release:4.4.1`
 - Run as a non-root user. User: `yt-dlp` Created.
 
 ## How to use

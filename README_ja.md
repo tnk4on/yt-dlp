@@ -26,7 +26,8 @@ Dowonload ---> [[Quay.io](https://quay.io/repository/tnk4on/yt-dlp): [![tnk4on/y
 - ベースイメージ:
     - python:alpine: `tnk4on/yt-dlp:latest,alpine-static,alpine-pip`
     - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi8-minimal`
-- FFmpegインストール済み
+- [FFmpeg](https://johnvansickle.com/ffmpeg/)インストール済み
+    - FFmpeg Static Builds: `release:4.4.1`
 - 非rootユーザーで実行。ユーザー: `yt-dlp` 作成済み。
 
 ## 使い方
