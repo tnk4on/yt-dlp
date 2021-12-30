@@ -4,7 +4,7 @@ Dowonload ---> [[Quay.io](https://quay.io/repository/tnk4on/yt-dlp): [![tnk4on/y
 
 [English](README.md) / [Japanese](README_ja.md)
 
-## Current Version: **2021.12.01**
+## Current Version: **2021.12.27**
 
 - This repository is inspired by [kijart/docker-youtube-dl](https://github.com/kijart/docker-youtube-dl).
 - [Podman](https://github.com/containers/podman)と[Buildah](https://github.com/containers/buildah)での使用を前提として記載しています。Dockerをお使いの場合は適宜読み替えてください。
