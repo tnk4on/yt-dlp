@@ -21,6 +21,7 @@ RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.t
 FROM python:alpine
 ENV FFMPEG_VERSION=4.4.1
 COPY --from=prep ffmpeg-${FFMPEG_VERSION}-amd64-static/ffmpeg /usr/local/bin
+COPY --from=prep ffmpeg-${FFMPEG_VERSION}-amd64-static/ffprobe /usr/local/bin
 COPY ./yt-dlp.conf /etc/yt-dlp.conf
 
 COPY --from=prep yt-dlp /usr/local/bin
