@@ -5,7 +5,7 @@ FROM alpine:latest as prep
 LABEL maintainer="Shion Tanaka / Twitter(@tnk4on)"
 
 # yt-dlp source (https://github.com/yt-dlp/yt-dlp)
-ENV BUILD_VERSION=2021.12.27
+ENV BUILD_VERSION=2023.03.04
 RUN wget https://github.com/yt-dlp/yt-dlp/releases/download/${BUILD_VERSION}/SHA2-256SUMS \
 && SHA256_SUM=`grep 'yt-dlp$' SHA2-256SUMS` \
 && wget https://github.com/yt-dlp/yt-dlp/releases/download/${BUILD_VERSION}/yt-dlp \
@@ -19,7 +19,7 @@ RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.t
 
 # Building Image
 FROM python:alpine
-ENV FFMPEG_VERSION=4.4.1
+ENV FFMPEG_VERSION=6.0
 COPY --from=prep ffmpeg-${FFMPEG_VERSION}-amd64-static/ffmpeg /usr/local/bin
 COPY ./yt-dlp.conf /etc/yt-dlp.conf
 
