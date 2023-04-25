@@ -4,7 +4,7 @@ Dowonload ---> [[Quay.io](https://quay.io/repository/tnk4on/yt-dlp): [![tnk4on/y
 
 [English](README.md) / [Japanese](README_ja.md)
 
-## Current Version: **2021.12.27**
+## Current Version: **2023.03.04**
 
 - This repository is inspired by [kijart/docker-youtube-dl](https://github.com/kijart/docker-youtube-dl).
 - [Podman](https://github.com/containers/podman)と[Buildah](https://github.com/containers/buildah)での使用を前提として記載しています。Dockerをお使いの場合は適宜読み替えてください。
@@ -19,15 +19,15 @@ Dowonload ---> [[Quay.io](https://quay.io/repository/tnk4on/yt-dlp): [![tnk4on/y
 コンテナイメージのビルド方式により下記の3種類があります
 - `tnk4on/yt-dlp:latest,alpine-static` -> yt-dlpとFFmpegは静的バイナリを使用
 - `tnk4on/yt-dlp:alpine-pip` -> パッケージ管理ツール(pip/apk)からyt-dlpとFFmpegを導入
-- `tnk4on/yt-dlp:ubi8-minimal` -> パッケージ管理ツール(pip/dnf)からyt-dlpとFFmpegを導入
+- `tnk4on/yt-dlp:ubi-minimal` -> パッケージ管理ツール(pip/dnf)からyt-dlpとFFmpegを導入
 
 ### 機能の特徴
 
 - ベースイメージ:
     - python:alpine: `tnk4on/yt-dlp:latest,alpine-static,alpine-pip`
-    - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi8-minimal`
+    - ubi8:ubi-minimal: `tnk4on/yt-dlp:ubi-minimal`
 - [FFmpeg](https://johnvansickle.com/ffmpeg/)インストール済み
-    - FFmpeg Static Builds: `release:4.4.1`
+    - FFmpeg Static Builds: `release:6.0`
 - 非rootユーザーで実行。ユーザー: `yt-dlp` 作成済み。
 
 ## 使い方
