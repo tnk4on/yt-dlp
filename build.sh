@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Repository Login
-echo "### login to docker.io ###"
+echo -e "### login to docker.io ###"
 podman login docker.io
 
-echo "### login to quay.io ###"
+echo -e "\n### login to quay.io ###"
 podman login quay.io
 
 # Building Image
@@ -14,7 +14,7 @@ cd Containerfile.d
 for f in Containerfile*
 do
     echo -e "\n### Build ${f/Containerfile./} ###"
-    buildah bud -t yt-dlp:${f/Containerfile./} -f $f
+    buildah build --layers=true -t yt-dlp:"${f/Containerfile./}" -f $f
 done
 
 # Test
