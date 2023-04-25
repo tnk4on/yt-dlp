@@ -1,0 +1,15 @@
+# Containerfile for tnk4on/yt-dlp:ubi-minimal
+FROM registry.access.redhat.com/ubi9/ubi-minimal
+LABEL maintainer="Shion Tanaka / Twitter(@tnk4on)"
+RUN microdnf update --disableplugin=subscription-manager -y \
+&& microdnf install --disableplugin=subscription-manager --nodocs -y python39 python3-pip shadow-utils \
+&& microdnf clean all \
+&& pip3 install --upgrade pip \
+&& pip3 install yt-dlp \
+&& rm -rf ~/.cache/pip \
+&& chmod o+w /media \
+&& useradd yt-dlp
+COPY ./yt-dlp.conf /etc/yt-dlp.conf
+WORKDIR /media
+USER yt-dlp
+ENTRYPOINT ["yt-dlp"]
